@@ -1,0 +1,15 @@
+export default {
+  primary: "#B28CFF",
+  onPrimary: "#FFFFFF",
+  textprimary: "#263257",
+  textblack: "101010",
+  bodytext: "#8A96BC",
+  background: "#FFFFFF",
+  lightgray: "#F2F2F2",
+  grey: "#999999",
+  error: "red",
+  lightred: "#FFCCCC",
+  black: "black",
+  white: "#FFFFFF",
+  success: "#00C07F",
+};
