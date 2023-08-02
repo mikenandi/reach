@@ -1,8 +1,9 @@
 import * as React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Ionicons, Entypo, AntDesign, EvilIcons } from "@expo/vector-icons";
+import { Ionicons, Foundation, FontAwesome5 } from "@expo/vector-icons";
 import Colors from "../constants/Colors";
 import { TestScreen } from "../screens/test-screen";
+import { NavIcon } from "../components";
 
 const Tab = createBottomTabNavigator();
 
@@ -19,7 +20,8 @@ export const Main: React.FC = () => {
           tabBarInactiveBackgroundColor: Colors.white,
           tabBarStyle: {
             paddingBottom: 4,
-            paddingTop: 4,
+            paddingTop: 10,
+            height: 60,
           },
           tabBarLabelStyle: {
             fontFamily: "PoppinsMedium",
@@ -31,42 +33,43 @@ export const Main: React.FC = () => {
           name="Home"
           component={TestScreen}
           options={{
-            tabBarLabel: "Home",
+            tabBarLabel: "",
             title: "",
-            tabBarIcon: ({ color, size, focused }) =>
-              focused ? (
-                <Entypo name="home" size={size} color={color} />
-              ) : (
-                <AntDesign name="home" size={size} color={color} />
-              ),
+            tabBarIcon: ({ color, size }) => (
+              <NavIcon color={color}>
+                <Foundation name="home" size={28} color={color} />
+              </NavIcon>
+            ),
           }}
         />
 
         <Tab.Screen
-          name="Maps"
+          name="Notifications"
           component={TestScreen}
           options={{
-            tabBarLabel: "Statistics",
             title: "",
+            tabBarLabel: "",
             tabBarIcon: ({ color, size, focused }) => (
-              <EvilIcons name="chart" size={size} color={color} />
+              <NavIcon color={color}>
+                <FontAwesome5 name="calendar-alt" size={24} color={color} />
+              </NavIcon>
             ),
           }}
         />
         <Tab.Screen
-          name="Profile"
+          name="Statistics"
           component={TestScreen}
           options={{
+            tabBarLabel: "",
             title: "",
-            tabBarLabel: "Notifications",
             tabBarIcon: ({ color, size, focused }) => (
-              <Ionicons
-                name={
-                  focused ? "ios-notifications" : "ios-notifications-outline"
-                }
-                size={size}
-                color={color}
-              />
+              <NavIcon color={color}>
+                <Ionicons
+                  name="md-chatbubble-ellipses-outline"
+                  size={size}
+                  color={color}
+                />
+              </NavIcon>
             ),
           }}
         />
