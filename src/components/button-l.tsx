@@ -1,11 +1,21 @@
 import React from "react";
-import { Button, StyleSheet, Text, useWindowDimensions } from "react-native";
+import {
+  Button,
+  StyleSheet,
+  Text,
+  TextStyle,
+  ViewStyle,
+  useWindowDimensions,
+} from "react-native";
 import { TouchableRipple } from "react-native-paper";
 import Colors from "../constants/Colors";
 
 interface ButtonLProps {
   children: React.ReactNode;
   onPress?: () => void;
+  style?: ViewStyle;
+  textColor?: any;
+  buttonColor?: any;
 }
 
 export const ButtonL: React.FC<ButtonLProps> = (props) => {
@@ -21,10 +31,19 @@ export const ButtonL: React.FC<ButtonLProps> = (props) => {
         ...styles.container,
         width: BUTTON_WIDTH,
         height: BUTTON_HEIGHT,
+        ...props.style,
+        backgroundColor: props.buttonColor ?? Colors.primary,
       }}
       centered
     >
-      <Text style={styles.buttonText}>{props.children}</Text>
+      <Text
+        style={{
+          ...styles.buttonText,
+          color: props.textColor ?? Colors.white,
+        }}
+      >
+        {props.children}
+      </Text>
     </TouchableRipple>
   );
 };
@@ -37,7 +56,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   buttonText: {
-    color: Colors.onPrimary,
+    // color: Colors.onPrimary,
     fontSize: 16,
     textTransform: "uppercase",
     fontFamily: "PoppinsMedium",

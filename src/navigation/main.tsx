@@ -2,8 +2,8 @@ import * as React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons, Foundation, FontAwesome5 } from "@expo/vector-icons";
 import Colors from "../constants/Colors";
-import { TestScreen } from "../screens/test-screen";
 import { NavIcon } from "../components";
+import { Home, Notifications, Stats } from "../screens";
 
 const Tab = createBottomTabNavigator();
 
@@ -31,7 +31,7 @@ export const Main: React.FC = () => {
       >
         <Tab.Screen
           name="Home"
-          component={TestScreen}
+          component={Home}
           options={{
             tabBarLabel: "",
             title: "",
@@ -44,8 +44,8 @@ export const Main: React.FC = () => {
         />
 
         <Tab.Screen
-          name="Notifications"
-          component={TestScreen}
+          name="Stats"
+          component={Stats}
           options={{
             title: "",
             tabBarLabel: "",
@@ -57,8 +57,8 @@ export const Main: React.FC = () => {
           }}
         />
         <Tab.Screen
-          name="Statistics"
-          component={TestScreen}
+          name="Notifications"
+          component={Notifications}
           options={{
             tabBarLabel: "",
             title: "",

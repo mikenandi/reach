@@ -4,3 +4,4 @@ export * from "./text-input-field";
 export * from "./body-text";
 export * from "./loading-screen";
 export * from "./nav-icon";
+export * from "./menu-icon";

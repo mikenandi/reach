@@ -16,7 +16,7 @@ interface ScreenProps {
 export const Screen: React.FC<ScreenProps> = (props) => {
   return (
     <>
-      <StatusBar backgroundColor={Colors.background} />
+      <StatusBar backgroundColor={Colors.primary} />
       <View style={{ ...styles.container, ...props.style }}>
         {props.children}
       </View>

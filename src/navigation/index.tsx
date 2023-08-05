@@ -15,6 +15,7 @@ export const Navigation = () => {
     PoppinsRegular: require("../../assets/fonts/poppins/Poppins-Regular.otf"),
     PoppinsMedium: require("../../assets/fonts/poppins/Poppins-Medium.otf"),
     PoppinsLight: require("../../assets/fonts/poppins/Poppins-Light.otf"),
+    MontserratItalic: require("../../assets/fonts/Montserrat-Italic.otf"),
   });
 
   React.useEffect(() => {
